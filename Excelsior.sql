@@ -31,4 +31,6 @@ select* from produto order by preço desc;
 select nome_cli from cliente,venda where (cliente.ID_cli=venda.ID_cli) and (venda.Quantidade>2 and venda.Quantidade<10);
 select max(venda.Quantidade),descrição from venda, produto where (venda.COD_prod=produto.COD_prod);
 
-Create as view 
+Create view Venda_desc as (Select * from venda inner join produto having produto.preço>3)
+
+Select * from Venda_desc
